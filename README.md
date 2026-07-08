@@ -1,51 +1,84 @@
-PDF to Word Converter
+# PDF to Word Converter
 
 A simple desktop application built with Python and Tkinter that converts PDF files into Microsoft Word (.docx) documents.
 
-Requirements
-Python 3.10 or newer
-Windows, macOS, or Linux
-1. Download the Project
+## Requirements
 
-Download or clone this repository.
+- Python 3.10 or newer
+- Windows, macOS, or Linux
 
+## Setup
+
+### 1. Download the project
+
+Clone this repository, then move into the project folder:
+
+```bash
 git clone <your-repository-url>
-cd <project-folder>
-2. Create a Virtual Environment
-Windows
+cd "PDF Converter"
+```
+
+### 2. Create a virtual environment
+
+**Windows**
+```bash
 python -m venv venv
-macOS/Linux
+```
+
+**macOS/Linux**
+```bash
 python3 -m venv venv
-3. Activate the Virtual Environment
-Windows
+```
+
+### 3. Activate the virtual environment
+
+**Windows**
+```bash
 venv\Scripts\activate
-macOS/Linux
+```
+
+**macOS/Linux**
+```bash
 source venv/bin/activate
+```
 
-You should now see (venv) at the beginning of your terminal prompt.
+You should now see `(venv)` at the beginning of your terminal prompt.
 
-4. Install the Required Packages
+### 4. Install the required packages
+
+```bash
 pip install -r requirements.txt
-5. Run the Program
-python main.py
+```
 
-If your main Python file has a different name, replace main.py with that filename.
+### 5. Run the program
 
-6. Using the Application
-Open the program.
-Click Select PDF.
-Choose the PDF you want to convert.
-Wait for the conversion to finish.
-The Word document (.docx) will be saved in the same folder as the selected PDF.
-Project Structure
-project/
+```bash
+python converter.py
+```
+
+## Using the application
+
+1. Open the program.
+2. Click **Select PDF**.
+3. Choose the PDF you want to convert.
+4. Wait for the "Finished!" message.
+5. The converted Word document (`.docx`) will be saved in the same folder as the selected PDF, using the same filename.
+
+## Project structure
+
+```
+PDF Converter/
 │
-├── main.py
+├── converter.py       # main application
 ├── requirements.txt
 ├── README.md
-└── venv/          (created after setting up the virtual environment)
-Deactivating the Virtual Environment
+└── venv/               (created after setting up the virtual environment)
+```
+
+## Deactivating the virtual environment
 
 When you're finished, you can deactivate the virtual environment by running:
 
+```bash
 deactivate
+```
