@@ -4,45 +4,59 @@ A simple desktop application built with Python and Tkinter that converts PDF fil
 
 ## Requirements
 
-- Python 3.10 or newer
-- Windows, macOS, or Linux
+- Python 3.10 or newer (or Anaconda, which includes Python)
+- Windows
+- Git (only needed if cloning from the command line)
 
 ## Setup
 
-### 1. Download the project
+### 1. Get the project onto your computer
 
-Clone this repository, then move into the project folder:
+**Option A — Command Prompt or Anaconda Prompt**
+
+Open Command Prompt (search "cmd" in the Start menu) or Anaconda Prompt (search "Anaconda Prompt"), then run:
 
 ```bash
 git clone <your-repository-url>
 cd "PDF Converter"
 ```
 
-### 2. Create a virtual environment
+**Option B — VS Code**
 
-**Windows**
+1. Open VS Code.
+2. Press `Ctrl+Shift+P` to open the Command Palette.
+3. Type and select **Git: Clone**.
+4. Paste your repository URL and choose a folder to save it in.
+5. When prompted, click **Open** to open the cloned folder in VS Code.
+6. Open a terminal inside VS Code: menu **Terminal > New Terminal**.
+
+### 2. Create a virtual environment named `PDFenv`
+
+In Command Prompt, Anaconda Prompt, or the VS Code terminal, make sure you're in the `PDF Converter` folder, then run:
+
+**Using Command Prompt (plain Python)**
 ```bash
-python -m venv venv
+python -m venv PDFenv
 ```
 
-**macOS/Linux**
+**Using Anaconda Prompt**
 ```bash
-python3 -m venv venv
+conda create -n PDFenv python=3.10
 ```
 
-### 3. Activate the virtual environment
+### 3. Activate `PDFenv`
 
-**Windows**
+**Command Prompt / VS Code terminal**
 ```bash
-venv\Scripts\activate
+PDFenv\Scripts\activate
 ```
 
-**macOS/Linux**
+**Anaconda Prompt**
 ```bash
-source venv/bin/activate
+conda activate PDFenv
 ```
 
-You should now see `(venv)` at the beginning of your terminal prompt.
+You should now see `(PDFenv)` at the beginning of your prompt.
 
 ### 4. Install the required packages
 
@@ -56,9 +70,11 @@ pip install -r requirements.txt
 python converter.py
 ```
 
+A small window titled "PDF to Word Converter" should open.
+
 ## Using the application
 
-1. Open the program.
+1. Open the program (see step 5 above).
 2. Click **Select PDF**.
 3. Choose the PDF you want to convert.
 4. Wait for the "Finished!" message.
@@ -72,13 +88,19 @@ PDF Converter/
 ├── converter.py       # main application
 ├── requirements.txt
 ├── README.md
-└── venv/               (created after setting up the virtual environment)
+└── PDFenv/             (created after setting up the virtual environment)
 ```
 
-## Deactivating the virtual environment
+## Deactivating the environment
 
-When you're finished, you can deactivate the virtual environment by running:
+When you're finished, deactivate with the command matching how you activated it:
 
+**Command Prompt / VS Code terminal**
 ```bash
 deactivate
+```
+
+**Anaconda Prompt**
+```bash
+conda deactivate
 ```
