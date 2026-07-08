@@ -2,13 +2,23 @@
 
 A simple desktop application built with Python and Tkinter that converts PDF files into Microsoft Word (.docx) documents.
 
-## Requirements
+There are two ways to use this app: run the **prebuilt .exe** (no Python required), or **run it from source** (useful for development).
+
+## Option 1: Run the prebuilt .exe
+
+1. Go to the `dist` folder in the project.
+2. Double-click `converter.exe`.
+3. If Windows SmartScreen shows a warning (since the app isn't code-signed), click **More info > Run anyway**.
+
+That's it — no Python, virtual environment, or installed packages needed. Skip to [Using the application](#using-the-application) below.
+
+## Option 2: Run from source
+
+### Requirements
 
 - Python 3.10 or newer (or Anaconda, which includes Python)
 - Windows
 - Git (only needed if cloning from the command line)
-
-## Setup
 
 ### 1. Get the project onto your computer
 
@@ -80,14 +90,28 @@ A small window titled "PDF to Word Converter" should open.
 4. Wait for the "Finished!" message.
 5. The converted Word document (`.docx`) will be saved in the same folder as the selected PDF, using the same filename.
 
+## Building the .exe yourself
+
+If you've changed `converter.py` and want to rebuild the executable, run this from an activated `PDFenv` (see [Option 2](#option-2-run-from-source) above; `pyinstaller` is already listed in `requirements.txt`):
+
+```bash
+pyinstaller converter.spec
+```
+
+The new `converter.exe` will be written to the `dist` folder. The `build` folder and `converter.spec` are regenerated each time and are not tracked in git.
+
 ## Project structure
 
 ```
 PDF Converter/
 │
-├── converter.py       # main application
+├── converter.py       # main application source
+├── converter.spec      # PyInstaller build config
 ├── requirements.txt
 ├── README.md
+├── dist/
+│   └── converter.exe   # prebuilt executable
+├── build/               (PyInstaller intermediate files, not tracked)
 └── PDFenv/             (created after setting up the virtual environment)
 ```
 
