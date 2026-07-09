@@ -2,17 +2,9 @@
 
 A simple desktop application built with Python and Tkinter that converts PDF files into Microsoft Word (.docx) documents.
 
-There are two ways to use this app: run the **prebuilt .exe** (no Python required), or **run it from source** (useful for development).
+There are two ways to use this app: run the **prebuilt .exe** (no Python required after initial run), or **run it from source** (useful for development).
 
-## Option 1: Run the prebuilt .exe
-
-1. Go to the `dist` folder in the project.
-2. Double-click `converter.exe`.
-3. If Windows SmartScreen shows a warning (since the app isn't code-signed), click **More info > Run anyway**.
-
-That's it — no Python, virtual environment, or installed packages needed. Skip to [Using the application](#using-the-application) below.
-
-## Option 2: Run from source
+## Option 1: Run from source
 
 ### Requirements
 
@@ -24,11 +16,13 @@ That's it — no Python, virtual environment, or installed packages needed. Skip
 
 **Option A — Command Prompt or Anaconda Prompt**
 
+Create a folder on your PC/Mac 
 Open Command Prompt (search "cmd" in the Start menu) or Anaconda Prompt (search "Anaconda Prompt"), then run:
 
 ```bash
+cd <path to folder>
 git clone <your-repository-url>
-cd "PDF Converter"
+cd PDF Converter
 ```
 
 **Option B — VS Code**
@@ -51,7 +45,7 @@ python -m venv PDFenv
 
 **Using Anaconda Prompt**
 ```bash
-conda create -n PDFenv python=3.10
+conda create -n PDFenv python=3.12
 ```
 
 ### 3. Activate `PDFenv`
@@ -92,10 +86,11 @@ A small window titled "PDF to Word Converter" should open.
 
 ## Building the .exe yourself
 
-If you've changed `converter.py` and want to rebuild the executable, run this from an activated `PDFenv` (see [Option 2](#option-2-run-from-source) above; `pyinstaller` is already listed in `requirements.txt`):
+If you've changed `converter.py` and want to rebuild the executable, run this from an activated `PDFenv` 
+`pyinstaller` is already listed in `requirements.txt` - use the code below to create .exe
 
 ```bash
-pyinstaller converter.spec
+pyinstaller --onefile --windowed converter.py
 ```
 
 The new `converter.exe` will be written to the `dist` folder. The `build` folder and `converter.spec` are regenerated each time and are not tracked in git.
